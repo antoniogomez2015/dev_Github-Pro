@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			7.- Curso Git - Workflows
+
+				https://www.youtube.com/watch?v=VMInoluaZ9o&index=7&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	Ramas Ocultas:
+	______________
+
+	_cuando nosotros conectamos en el repositio local con el repositorio remoto, hay una rama ocual la cuál, es prácticamente un espejo entre éstos dos proyectos (idéntico ha master)
+
+	_de ésta maner, la rama oculta se llama "origin/master", a la cuál, podremos acceder primeramente estando en la ubicación del proyecto a través, del git bash
+
+	_para posteriormente acceder ha ésta oculata a través, del siguiente comando:
+
+
+		_git branch -a + enter
+
+
+	_de ésta manera, el sistema nos listará la rama ocualta en color rojo, en éste caso con el nombre de "remote/origin/master"
+
+
+
+	Consolidar Commits de Colaboradores:
+	____________________________________
+
+	_de ésta manera, la rama ocualta nos permitirá poder consolidar los commits, realizados por los usuarios colaboradores en el proyecto de la organización
+
+	_así, podremos consolidar los commits, realizaos por los colaboradores ó teceros dentro de la rama oculta para posteriormente poder migrarla a la rama del proyecto de la organización como administradores del proyecto
+
+	_de ésta manera, cuando existan commits, realizados por los usuarios colaboradores podremos consolidar éstos commits, a la rama ocual a través, del siguiente comando:
+
+
+		_git fetch origin + enter
+
+
+	_así, los commits, ha quedarán bajados en el sistema local del usuario administrador del proyecto más aún no estarán en la rama master
+
+
+
+
+	Volcado de Commits de Colaboradores:
+	____________________________________
+
+	_de ésta manera, cuando ya hayamos consolidado los commits, de colaboradores en el paso anterior, es que podremos hacer un volcado de esos commits, y cambios dentro de la rama del proyecto a través, del usuario administrador donde se encuentra alojado el proyecto en local
+
+
+	_
+
+	_para lo cuál, dispondremos del siguiente comando:
+
+
+		_git merge origin/master + enter
+
+
+	_de ésta manera, ahora si; ya los commits, de los usuarios colaboradores se han consolidado en un sólo y se han pasado a la rama master, del respectivo proyecto
+
+
+
+	Actualizar el Proyecto Remotodo:
+	________________________________
+
+	_para posteriormente migrar todos éstos cambios ó commits, al proyecto remoto de la organización, una vez que ya hemos realizado el volcado de commits, en el paso anterior
+
+	_para lo cuál, dispondremos del siguiente coamando:
+
+
+		_git push origin master + enter
+
+	
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

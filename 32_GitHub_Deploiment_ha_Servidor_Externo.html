@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			9.- Curso Git - Deployment con git
+
+				https://www.youtube.com/watch?v=Q5kQmlslOwA&index=9&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+				
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	GitHub_Deploiment_ha_Servidor_Externo:
+	______________________________________
+
+	_tendremos la posibilidad de conectarnos ha servidores externos de pago a través, de la plataforma de github, siempre y cuando el servidor externo al cuál, conectarnos soporte coneziones de tipo SSH, y sea un servidor previamente configurado con opciones avanzadas para las nuevas tecnologías
+
+	_de ésta manera, el "Link Key SSH", que nos brinda gitbub, nos permitirá conectarnos fácilmente a un servidor ó servidores sin que tener que usar un contraseña en cada conexión
+
+
+
+	Llave Pública y Llave Privada:
+	______________________________
+
+	_de ésta maenra, podremos crear un llave pública y una llaves privada para un proyecto ó repositorio específico para que así, github, sepa que sonos nosotros realmente lo que estamos accediendo a la plataforma de github
+
+	_de ésta manera, podremos crear ésta key, en cualquier directorio, preferiblemente podemos hacerlo en el directorio principal de nuestro proyecto web
+
+	_para lo cuál, dispondremos del siguiente comando:
+
+
+		_ssh-keygen + enter
+
+
+	_para que así, el sistema nos mnuestre la ruta sugerida que por lo general será el root, ó home, ó raíz, del proyecto
+
+
+		_le damos "enter", para confirmar y pasar al siguiente paso
+
+
+	_así, como también, creará un capa de seguridad en la cuál, nos pedirá una contraseña
+
+
+		_ésta lo podemos dejar como está y le damos ha "enter", para continuar
+
+
+		_así, como también, nos pedirá de nuevo que confirmemos la contraseña, le damos "enter"
+
+
+	NOTA: si el sistema crea la llave SSH, en otro lugar como por ejemplo en: 
+
+
+		"C:\Users\mono/.SSH"
+
+
+	podríamos copiar ésta carpeta y pegarla dentro de la estructura raíz, de nuestro proyecto web, el cuál, es esl proyecto web, de nuestro perfil dentro de la plataforma de github
+
+
+
+	Verificar Key SSH:
+	__________________
+
+	_para lo cuál, podremos pedirle al sistema que nos liste los archivos para lo cuál, dispondremos del siguiente comando:
+
+
+		_ls + enter
+
+
+	_de ésta manera, el sistema nos listará sóo los archivos visibles ó públicos
+
+
+	_más para ver los archivos ocultos dispondremos del siguiente comando:
+
+
+		_ls -rf + enter
+
+
+	_de ésta manera, el sistema nos listará los archivos ocultos incluyendo el ".ssh/"
+
+
+
+
+	Entrar en la Llave SSH:
+	_______________________
+
+	_así, posteriormente de haber creado la llave ssh, podremos entrar en ésta para ver sus característias
+
+	_así, podremos entrar en ese respectivo directorio a través, de git bash:
+
+
+		_cd .ssh + enter
+
+
+	_para así, bajar ó entrar en ese respectivo directorio
+
+	_más para ver los archivos dentro de éste directorio debemos indicarle al sistema que nos liste éstos respectivos archivos a través, del siguiente comando:
+
+
+		_ls + enter
+
+
+	_de ésta manera, el sistema nos listará los respectivos archivos:
+
+
+		_id_rsa  id_rsa.pub
+
+
+	_de ésta manera, los archivos que se encuentra dentro son:
+
+
+		//lave privada (la cuál, no debe de ver nadie)
+		_id_rsa
+
+		//llave pública
+		id_rsa.pug
+
+
+	Obtener Llave Pública:
+	______________________
+
+	_para luego obtener la llave ssh, pública para lo cuál, debemos utilizar el siguiente comando:
+
+
+		_cat id_rsa.pub + enter
+
+
+	_para que así, el sistema nos arroje la llave pública la cuál, será un código cifrado como por ejemplo:
+
+
+		ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6sA1NqiUI9TVKeNieiiekrXsX30t56IiqZ5XNcpHae4cFp/JMU3DmyjwCmjKzyqDguPqeahLFV48D94SL/ZL6FlvGJxHv00jb9mwdDxc9q2tVgrmBZGQr1wwrfhuFypK3gLVXz7eX7SnJYCmeXffJI3YR+NhiTpZTQBXixCWKJlS/r1t3rfa2Dkmom3qdc8OML5BigP+C9nxIWJEHCaj2bQEdtDDBYYvcECvXyzCuCCI3xsooXsXHAieCvLz5ldy+xWOjK3CFL6pvb9N+nfXLJG1YO1goyWOJGA6pLKCnEOhDRMV96vEd1eSpQ3NKAhv2bXXAw9UYZtQOwwrUS7eX mono@tony
+
+
+	GitHub SSH Setting:
+	___________________
+
+	_de ésta manera, ahora podremos ir a la plataforma de github, específicamente a la sección de "VIew Profiles and More", en las opciones de settings, de usuarios
+
+	_en la cuál, podremos podremos a la sección del sidebar left, y entrar en la sección de "SSH Key", ó "SSH and GPG Key"
+
+
+
+	Github Agregar SSH Key:
+	_______________________
+
+	_de ésta manera, podremos indicarle ha github, que existimos como usuario local, para que así, github, reconozca nuestra computadora y nuestra conexión como segura e identificada por el sistema
+
+	_para lo cuál, debemos de estar en la sección indicada en el paso anterior de nuestro perfil, "SSH Key", ó "SSH and GPG Key"
+
+	_y allí, darle al botón de "New SSH Key", para que así, se desplieguen una srie de campos en las cuáles, podremos indicar un título descriptivo del equipo, ej: "macBookPro", como un también, podremos agregar la Key, generada en nuestro sistema local lo cuál, he hemos realizado previamente
+
+	_para por último darle al botón de "Add SSH Key", para que así, github, agregue el nuevo ssh key, de nuestro sistema local
+
+	_de ésta cuando enviemos cambios ha github, ésta sabrá que sonos nosotros sin la necesidad de envarle un usuario y una contraseña
+
+	_para que así, ahora éste nuevo SSH Key, aparezca ya visible en la sección de setting/keys, de nuestro perfil indicándonos sus características y de que éste no lo hemos utilizado aún
+
+
+
+	Ruta SSH de Repositorio de GitHub:
+	__________________________________
+
+	_de ésta manera, primeramente debemos de conectarnos con el repositorio respectivo del proyecto que conformará la web, con el servidor externo remoto a través, del link llave SSH
+
+	_para lo cuál, vamos a la plataforma de github, y entramos ha nuestro perfil y a su vez, a repositorio de la respectiva web, ha migrar a un servidor externo
+
+	_y allí, entramos a las opciones de "Clone or Download", y allí, encontraremos las opciones de "Cone with HTTPS ó SSH"
+
+	_para que así, podamos seleccionar las opciones de SSH; y copiar así, el respectivo enlace del repositorio
+
+
+
+	Conexión SSH en GitHub:
+	_______________________
+
+	_para posteriormente conectarnos con ese rsepectivo repositorio desde git, local para lo cuál, dispondremos del siguiente comando:
+
+
+		_git remote add origin git@github.com:antoniogomez2015/antoniogomez2015.github.io.git + enter
+
+
+	_para que así, el sistema realize la conexión con éste repositorio de github, más ésta conexión se ha realización con SSH, y no HTTPS
+
+
+
+	New Commit:
+	___________
+
+	_para a continuación crear un nuevo commit, con los cambios que deseamos subir el repositorio que se subirá posteriormente ha github, y luego al servidor externos a través, de la conexión SSH
+
+	_de ésta manera, para crear el commit, disponemos de los siguientes comandos:
+
+
+		//preparar el commit "se ha agregado el certificado SSH"
+		 _git add -A + enter
+
+
+		//crear el commit
+		_git commit -m "proyecto web externo" + enter
+
+
+
+	Migrar Commit de Git ha GitHub:
+	_______________________________
+
+	_para a continuación subir el nuevo commit, que hemos realizado en el paso anterior a github, al repositorio que tenemos listo con conexión SSH, para su posterior envío a un servidor externo
+
+	_de ésta manera, dispondremos del siguiente comando:
+
+
+		//estructura:
+		_git push origin + branch
+
+		//ejemplo
+		_git push origin master + enter
+
+
+	_de ésta manera, el sistema subirá el proyecto ó repositorio ha github, específicamente a nuestro perfil en la rama y repositorio respectivo
+
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

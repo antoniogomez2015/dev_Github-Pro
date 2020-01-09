@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			3.- Curso Git - Nuestro primer proyecto
+
+				https://www.youtube.com/watch?v=vH9pkFf1D7M&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId&index=3
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	Git Reset:
+	__________
+
+	_más en determinados casos requeriremos borrar commits, ó ramas ó branchs, como por ejemplo commits, que tienes errores ó directamente no funcionan ó están descontinuados, otros
+
+	_de ésta manera, git, nos ofrece tres tipos de resets, para commits, los cuáles, tendrán diferentes alcances, éstos son:
+
+
+		_git reset --soft f18fc7660edacd5371da6b020f2aaa273303aa30 + enter
+
+			_éste es el reset, más simple el cuál, no toca el código "working area"
+
+
+		_git reset --mixed f18fc7660edacd5371da6b020f2aaa273303aa30 + enter (no recomendado) 
+
+			_éste reset, borra el "staging area", sin tocar el "work area"
+
+
+		_git reset --hard f18fc7660edacd5371da6b020f2aaa273303aa30 + enter
+
+			_éste reset, es el más peligroso por que borra adsolutamente todo lo que hay dentro del commit, respectivo y no tiene vuelta atras
+
+
+
+	Git Reset Soft:
+
+	_ahora para utilizar el comando de eliminación de commit, soft, debemos primeramente ver los commits, disponibles a través, del coamando:
+
+		_git log + enter
+
+	_para que así, el sistema no liste lo commits, disponibles y podamos así, seleccionar el código del commit, deseado
+
+	_para posteriormente a través, del comando:
+
+		_git reset --soft + enter
+
+	_para que así, el sistema borre de la lista de commits, el respectivo commit, que le hemos indicado pero el código de nuestro proyecto estará intacto
+
+	_de ésta manera, si volvemos ha ejecutar el comando:
+
+		git log + enter
+
+	_podremos ver que el commit, respectivo que hemos eliminado ya no aparecerá listado dentro de los commits, disponibles en el respectivo proyecto
+
+	NOTE: ésta opción es muy útil cuando deseamos conservar el código y archivos de un commit, pero no el commit, en si mnismos, prescisdiéndo así, sólo del commit, y no del código y archivos respectivos
+
+
+
+
+	Git Reset Hard:
+
+	_las opciones de git reset hard, funcionan exactamente igual que las opciones de git reset soft, más con la diferencia que los commits, en éste caso borrarán los archivos y código de la respetiva rama ó commit
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

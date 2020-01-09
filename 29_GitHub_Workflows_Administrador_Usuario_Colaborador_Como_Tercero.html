@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			7.- Curso Git - Workflows
+
+				https://www.youtube.com/watch?v=VMInoluaZ9o&index=7&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+				(minuto: 26:00 | 3_proyectos con terceros:)
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	GitHub_Workflow Administrador Usuario Colaborador como Tercer:
+	______________________________________________________________
+
+
+	NOTA: a partir de éste punto empezaremos a ver el caso número 3: 
+
+
+		_"3_proyectos con terceros:"
+
+
+	_ésta modalidad ó caso, es en el cuál, nosotros no somos los administradores de un proyecto ó repositorio remoto de una organización en la plataforma de github, pero tampoco sómos colaboradores en éste
+
+	_más queremos participar en el proyecto de alguna manera
+
+
+
+	Funcionalismo:
+	______________
+
+
+		Repositorio Principal:
+		______________________
+
+	_de ésta manera, tendremos el repositorio principal de la organización de la cuál, deseamos participar y contribuir en su repositorio de alguna manera, por ejemplo; en el repositorio de Jquery
+
+
+		Fork ó Repositorio Clon:
+		________________________
+
+		_de ésta manera, podremos hacer una forma de clonado del proyecto ó repositorio al cuál, deseamos participar y contribuir de alguna manera
+
+
+		NOTA:
+
+		_en éste punto hay que hacer un diferencia ó salvedad con la opción de "clone repositorio", ya que clone repositorio, lo que hace es crear una versión del proyecto ó repositorio en nuestro sistema local
+
+		_más "fork", nos permitirá hacer un clone, del repositorio de manera remota, es decir, que nos creará una copia ó clone, del repositorio deseado en nuestro perifl en la plataforma de github
+
+		
+
+		Hacer un Fork:
+		______________
+
+		_para lo cuál, primeramente debemos de ubicar el repositorio del usuario u organización al cuál, deseamos hacerlo un "fork", ó clone, remoto
+
+		_de ésta manera, cuando entremos en el repositorio deseado dentro de la plataforma de github
+
+		_para a continuación ubicar en la parte superior de la página de github, la opción ó botón de "Fork", para que así, de ésta manera, elrespectivo repositorio ahora quede replicado como una instancia en nuestro perfil personal
+
+		_de ésta manera, ya podremos replicar éste proyecto en nuestro sistema local de git, para que así, podamos trabajar y hacer modificaciones sobre éste proyecto ó repositorio respectivo
+
+
+
+		Nueva Rama Oculta:
+		__________________
+
+		_de ésta manera, al crear un fork, de un repositorio externo a los creados por nosotros se creará una capa más ó en éste caso una nueva rama ocualta más del repositorio clonada remotamente, por lo general con el nombre de 
+
+
+			_""upstream
+
+
+		_más es mejor asegurarse de que la rama oculta creada no tenga otro nombre para lo cuál, dispondremos del comando
+
+
+			_git branch -a + enter
+
+
+		_para que así, el sistema nos liste las ramas ocultas existentes en un color rojo
+
+
+		_de ésta manera, ésta nueva rama oculta creada nos servirá tanto para sincronizar commits, como para descargarlos a nuestro proyecto local, al mismo modo que en el funcionalismo convencional de trabajo en equipo colaborativo con repositorios organizacionales
+
+
+
+
+		Workflow:
+		_________
+
+		_de ésta manera, primeramente éste usuario tendrá que entrar "dentro de su perfil", y a su ve, dentro del repositorio al cuál, hizo un fork, el cuál sigue estando dentro de su perfil personal y no el de la organización del caso anterior "(caso 2)"
+
+
+		Proyecto Personal:
+		__________________
+
+		_primeramente debemos estar conectos a git, a través, de nuestro proyecto y no a través, de la organización del caso 2
+
+		_de ésta manera, debemos utilizar los siguientes comandos para cambiar de sesión ó conexión entre proyectos:
+
+
+			//verificar ha que proyecto estamos conectados de forma local
+			_git remote -v + enter
+
+			//desconectarse del proyecto local organizacional de git:
+			_git remote remove origin + enter
+
+
+			//conectarse al proyecto remoto personal:
+			_git remote add origin https://github.com/antoniogomez2015/esculapio-V2-30-de-Mayo-del-2017.git + enter
+
+
+
+		Clon Proyecto Local:
+		____________________
+
+		_para que así, éste usuario pueda tomar el "HTTPS", "link key", el cuál, utilizará para migrar posteriormente el respectivo proyecto ó repositorio a su sistma local
+
+		_para posteriormente hacer clon, del respectivo repositorio en su sistema local a través, del siguiente comando:
+
+
+			_git clone git://github.com/schacon/grit.git + enter
+
+
+		_de ésta manera git, replicará dicho proyecto ó repositorio al cuál, le hicimos fork, y teníamos en nuestro perfil personal, para que así, ahora esté disponible en nuestro sistema y proyecto local
+
+		_de ésta manera, ahora podremos ver los commits, nuevos que tenemos disponibles de éste repositorio a través, del siguiente comando:
+
+
+			_git log + enter
+
+
+
+		Actualización del Proyecto Clonado Remoto:
+		__________________________________________
+
+		_más también, tendremos la posibilidad de actualizar el proyecto que clonamos a través, de un fork, en nuestro perfil, de la respectiva organización para que así, obtengamos siempre los últimos cambios realizados sobre el respectivo proyecto al cuál, le hicimos fork
+
+		_para lo cuál, dispondremos del siguiete comando:
+
+
+			_git fetch upstream + enter
+
+
+		_de ésta manera, el sistema actualizará todos los archivos que hemos clonado de forma remota del respectivo repositorio en nuestro perfil dentro de la plataforma de github
+
+
+
+		Actualización del Proyecto Colonado Local:
+		__________________________________________
+
+		_de ésta manera, también, podremos actualizar nuestro proyecto local, una vez hayamos actualizado nuestra versión remota del respectivo repositorio en el paso anterior
+
+		_de ésta manera, dispondremos del siguiente comando:
+
+
+			_git fetch origin + enter
+
+
+		_de ésta manera, el sistema actualizará todos los archivos y commits, en nuestro proyecto y sistema local para que así, tengamos actualizado el respectivo proyecto ó repositorio
+
+
+
+		Creación de Commit como Tercero por un Usuario:
+		_______________________________________________
+
+		_de ésta manera, ahora si podremos trabajar en el proyecto ó repositorio de la organización el cuál, hemos clonado ha nuestro perfil, el cuál, hemos actualización a su vez, y replicado en nuestro sistema local
+
+		_de ésta maera, luego de haber modificado uno ó varios activos y lineas de código; ahora podremos crear y subir nuestros commits, a la plataforma de github, y notificarle al adminsitrador del proyecto de que hemos conseguido y solucionado errores en el proyecto
+
+		_para lo cuál, luego de haber realizado las respectivas modificaciones en el proyecto dispondremos de los siguientes comandos:
+
+
+			//ver los commis, que aún no hemos subido en color rojo
+			_git log + enter
+
+
+			//preparar los commits, a crear
+			_git add -a + enter
+
+
+			//creación de commit
+			_git commit -m "corrección de errores encontrados, otros..."
+
+
+			//subir los commits creados
+			_git push origin master + enter
+
+
+		_en éste punto debemos entender que a través, del comando "git push origin master", lo que hemos hecho es subir el commit, respectivo a nuestro proyecto remoto en nuestro perfil en la plataforma de github, y no al proyecto ó repositorio remoto de la organización en la plataforma de github, por que en éste caso; no tenemos acceso a la organización, sólo hemos hecho y trabajado con un fork, de dicho proyecto ó repositorio
+
+		_de ésta manera, ahora tendremos que notificarle al administrador del proyecto o repositorio de la organización respectiva que hemos realizado cambios en nuestra versión del repositorio a través, del fork, y que deseamos que éste administrador analize y acepte nuestros cambios
+
+		_para lo cuál, éste usuario debe de ir a su perfil personal en la plataforma de github, y entrar dentro del repositorio al cuál, hizo fork, dentro de su mismo perfil
+
+		_para que así, éste usuario tenga a disposición la opción del botón 
+
+
+			_"New Pull Request" 
+
+
+		_para que así, el usuario administrador resiva un listado de todas las modificaciones que realizó el usuario que hizo fork, y trabajó en nuevo commit, con las respectivas correcciones del proyecto ó repositorio
+
+		_de ésta manera, el usuario administrador podrá las líneas de código modificadas directamente en la plataforma de github, en colores verdes para las líneas no modificados de un respectivo archivo y líneas de color rojo para las líneas que han sido modificadas
+
+		_así, como también, éstas líneas de colores estarán precedidas por signos "+/-", en relación al código que se ha agregado ó eliminado respectivamente
+
+
+		Open a pull request:
+
+		_así, como también, podremos abrir una línea de comentarios y discusión sobre éstos nuevos cambios para que así, el usuario administrador y la comunidad puedan ver y conocer el punto de vista y el enfoque del usuario que ha realizado los respectivos cambios a través, del commit, que ha subido del proyecto al cuál, ha recho un fork
+
+		_de ésta manera, le enviaremos los cambios y una descripción a la respectiva organización para que ésta decida si incorporará éstos cambios en su repositorio ó no a través, de la opción de:
+
+
+			_"Merge Pull Request"
+
+
+		_para que así, los cambios sean agregados como un nuevo commit, dentro de la respectiva organización
+
+
+
+	
+
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			7.- Curso Git - Workflows
+
+				https://www.youtube.com/watch?v=VMInoluaZ9o&index=7&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	GitHub_Workflows_Administrador_Conflictos_en_Cambios_Superpuestos:
+	__________________________________________________________________
+
+	_en el trabajo en equipo ó coperativo existirán diferentes casos en los cuáles exista redundancia de información simultánea la cuál, tratará de sobre escribirse
+
+	_ya que habrá casos en que dos ó más usuarios colaboradores del proyecto por falta de comuncación ambos estén trabajando en un mismo documento y específicamente sobre los mismos componentes y líneas de código
+
+	_entendiendo que en los casos normales en los que cada usuario trabaja en diferentes partes del código y con diferentes documentos de forma ordenada, git realiza el "marge", ó acoplado de los commits, realizados de forma automática ó; 
+
+
+		_"Fast-Forward: (simple y automático)"
+
+
+
+	_más en los casos en que ésto no es así, git recurrirá al proceso de marge, ó acoplado manual y minucioso em el que toda la responsabilidad y proceso recaerá en nuestras manos a través, del proceso:
+
+
+		_"Manual-Marge: (largo y manual)"
+
+
+
+
+
+	Trabajo Colaborativo sin Problemas:
+	___________________________________
+
+
+		Caso Normal entre Usuarios Colaboradores y el Usuario Administrador:
+		____________________________________________________________________
+
+		_éste es el proceso más normal, donde un usuario que está colaborando en un proyecto organizacional creará sus propios commits, y los subirá, a la rama oculta del proyecto de la organización en la plataforma de github
+
+
+			Proceso de Usuarios Colaboradores:
+			__________________________________
+
+			_para lo cuál, utilizará el siguiente proceso convencional visto hasta ahora:
+
+
+				1_primeramente un usuario colaborador realiza cambios en un documento del proyecto en local
+
+				2_para a continuación subirlos a la plataforma de github, a través, de los comandos:
+
+
+					//preparar commit a subir al repositorio remoto de la organización
+					_git add -a + anter
+
+					//crear el commit a la organización
+					_git commit -m "mensaje"
+
+					//subir el commit a la organización
+					_git push origin master + enter
+
+			
+
+			Proceso de Usuario Administrador de la Organización:
+			____________________________________________________
+
+			_primeramente éste usuario deberá de cambiar de proyecto, de ésta manera, éste usuario tendrá que cambiar de su proyecto local personal en git, por el proyecto de la organización en git, a través, de los siguientes comando:
+
+
+				//verificar ha que proyecto estamos conectados de forma local
+				_git remote -v + enter
+
+				//desconectarse del proyecto local y personal de git:
+				_git remote remove origin + enter
+
+
+				//conectarse al proyecto remoto de la organización:
+				_git remote add origin https://github.com/antoniogomez2015/esculapio-V2-30-de-Mayo-del-2017.git + enter
+
+
+			_para a continuación proceder ha bajar los cambios ó commits, a nuestro equipo local realizados por los otros usuarios colaboradores en la plataforma de github, en el repositorio del proyecto de la organización respectiva
+
+			_para lo cuál, dispondremos del comando:
+
+
+				//migrar los commits, a la rama oculta del repositorio remoto de la organizaicón
+				_git fetch origin + enter
+
+
+			_para a continuación fusionar los commits, nuevos en la rama ocualta con los existentes de forma local para lo cuál, dispondremos del siguiente comando:
+
+
+				//pasar commits, de la rama ocual a la rama master, ó principal
+				_git marge origin/master + enter
+
+
+			_de ésta maenra, ya el usuario administrador podrá ver los commits, agregados de forma local a través, del siguiente comando:
+
+
+				//listar todos los commits, existentes en el proyecto local con las actualizaciones
+				git log + enter
+
+
+
+
+		Caso Conflictivo entre Usuarios Colaboradores y el Usuario Administrador:
+		_________________________________________________________________________
+
+		_en el siguiente caso plantearemos un ejemplo en el cuál, más de un usuario en colaboración con un repositorio de una organización dentro de la plataforma de github, trabajarán en un mismo archivo y sobre la misma línea de código, como una caso de falta de comunicación y programación de las faces del desarrollo
+
+		_de ésta manera, siguiendo el ejemplo; ambos usuarios modifican el mismo archivo en su sistema y proyecto ó repositorio local
+
+
+
+		Primer Usuario Colaborativo:
+		____________________________
+
+		_para que posteriormente uno de los usuarios comience ha crear el nuevo commit, para posteriormente subirlo a la plataforma de github, y al proyecto de la organización respectiva
+
+		_para lo cuál, éste usuario dispone de los siguiente comandos:
+
+
+			//preparar commit a subir al repositorio remoto de la organización
+			_git add -a + anter
+
+			//crear el commit a la organización
+			_git commit -m "mensaje"
+
+			//subir el commit a la organización
+			_git push origin master + enter
+
+
+
+		Segundo Usuario Colaborativo:
+		_____________________________
+
+		_de ésta menra, éste segundo usuario colaborativo que ha trabajado ó modificado el mismo archivo y las mismas líneas de código que el primer usuario ahora creará también, su commit, y lo subirá a la plataforma de github
+
+		_para lo cuál, éste usuario colaborativo dispondrá de los siguientes comandos:
+
+
+			//preparar commit a subir al repositorio remoto de la organización
+			_git add -a + anter
+
+			//crear el commit a la organización
+			_git commit -m "mensaje"
+
+			//subir el commit a la organización
+			_git push origin master + enter
+
+
+		_de ésta manera, en éste caso cuando éste segundo usuario trate de subir sus commits, al repositorio del proyecto de github, de la organización el sistema no se lo permitirá
+
+		_por que el sistema detectará que existen cambios nuevos ó comits, nuevos en el pproyectos los cuáles, han sido subidos por el primer usuario en éste caso
+
+		_de ésta maneral el sistema nos quiere decir que no podemos subir nuevos cambios ó commits, si antes no hemos bajado las actualizacíones exsitentes en el proyecto ó repositorio remoto de la organización en la plataforma de gitbu 
+
+		_para que así, no hayan inconsistencias ni código superpuesto  ó sobre escrito en el proyecto
+
+		_de ésta manera, para que éste segundo usuario pueda subir commits, a el repositorio remoto de la organización en la plataforma de github, éste usuario primero tendrán en éste caso, las actualizaciones exsitentes ó subidas por el primer usuario
+
+		_para lo cuál, éste segundo usuario dispondrá de los siguientes comandos:
+
+
+			//bajar los cambios ó commits, nuevos del proyecto remoto al local en la rama ocualta
+			_git fetch origin + enter
+
+
+			//para a continuación fusionar los commits, exsitentes con los nuevos en nuestra rama local master
+			_git merge origin/master + enter
+
+
+		_para que así, a paritr de éste punto se inicialize el proceso de:
+
+
+			_Manual-Marge: (largo y manual)
+
+
+		_lo que quiere decir es que nosotros mismos tendremos que arreglar el conflicto entre las versiones repetidas de los archivos intervenidos por ambos usuarios en éste caso
+
+		_mostrándonos así, un mensaje indicándonos el conflicto, indicándonos el archivo y las líneas ha modificar, otros
+
+		_para que así, personalmente podamos decidir con cuál, de las versiones nos quedaremos
+
+		
+		Corrección de Conflictos:
+
+		_para lo cuál, debemos abrir la instancia del archivo del usuario que logró subir primero el commit
+
+		_para que así, dentro de éste archivo encontremos en la primera línea intervenida con un conflicto la palabra: 
+
+
+			_"<<<<<<<HEAD"
+
+
+		_lo cuál, quiere decir que éste es el último commit, subido donde se encuentra el proyecto actualmente
+
+		_y así, como también, las demás líneas seguidas a la primera también, estarán marcadas y precedidas por la siguiente nomenclaruta ó marca:
+
+
+			_">>>>>>>>> origin/master"
+
+
+		_lo cuál, nos indica las áreas y líneas ha modificar y ha decidir con cuál, de las versiones quedarnos
+
+		_de ésta manera, debemos de proceder ha borrar uno de las dos versiones de las líneas dejando la que mas funciones en concenso con el equipo de desarrollo
+
+		_de ésta manera, luego de que ya hayamos borrado el código para que así, no hayan múltiples versiones de líneas de códico en un mismo archivos en diferentes usuaros, sea en cuál, sea de las versiones que se haya hecho la corrección
+
+		_es que podremos ahora si, subir el commit, de éste segundo usuario para lo cuál, éste usuario dispondrá de los siguiente comandos:
+
+
+			//verificar los comits y ver si hay cambios
+			_git status + enter
+
+
+			//preparar commit a subir al repositorio remoto de la organización
+			_git add -a + anter
+
+			//crear el commit a la organización
+			_git commit -m "se arreglaron los conflictos"
+
+			//subir el commit a la organización
+			_git push origin master + enter
+
+
+		_de ésta manera, ahora si podremos subir éste commit, sin ningún problema a la plataforma de github, en el proyecto ó repositorio de la organización
+
+
+
+		Actualización para los Usuarios que no hayan Resulto el Conflicto:
+		__________________________________________________________________
+
+		_de ésta manera, ahora los usuario que no hayan resulto el problema directamente en el código tendrán que bajar éstas nuevas actualizaciones para continuar trabajando en el proyecto con éstas correcciones de los conflictos previos
+
+		_para lo cuál, éstos usuarios dispondrán de los siguientes comandos:
+
+
+			//migrar los commits, a la rama oculta del repositorio remoto de la organizaicón
+			_git fetch origin + enter
+
+
+			//para a continuación fusionar los commits, exsitentes con los nuevos en nuestra rama local master
+			_git merge origin/master + enter
+
+
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

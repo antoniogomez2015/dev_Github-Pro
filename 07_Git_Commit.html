@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			3.- Curso Git - Nuestro primer proyecto
+
+				https://www.youtube.com/watch?v=vH9pkFf1D7M&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId&index=3
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	Git Commit:
+	___________
+
+	_de ésta manera, cuando ya hemos decidido que archivos están listos para el siguiente proceso y los hemos agregado al repositorio es hora de guardar éstos cambios de forma permanente acompañado de un mensaje descriptivo para lo cuál, debemos de hacer uso del siguiente comando:
+
+
+		_git commit -m "mensaje"
+
+
+	_para que así, el sistema nos arroje un listado en color blanco de todos los archivos agregado
+
+
+	NOTA: es recomendable y mucho más fácil tener a la mano y de forma visual y permanente toda la lista de commits, y códigos de éstos siempre visible y poder así, copiar rápidamente todos los códigos de éstos commits, para poder así, eliminar éstos en relación a nuestras necesidades
+
+		_así, a través, del siguiente comando seguido del nombre del usuario podremos hacer que el sistema nos liste los comits, realizados por un usuario determinado a través, de git bash, desde la ubicación del proyecto respectivo, ej:
+
+
+			_git log > commits.txt + enter
+
+			//para más información de éste comando ir ha "08_Git_Log.html"
+
+
+	_de ésta menera, a partir de éste punto si ejecutamos el comando:
+
+
+		_git status
+
+
+	_éste nos arrojará el siguiente mensaje:
+
+		_On bran master
+		_nothing to commit, working tree clean
+
+
+
+
+	New Commit:
+	___________
+
+	_de ésta manera, si a través, del tiempo modificamos ahora cualquier archivo por ej, el index.html, y guardamos éste y luego volvermos ha git bash, y ejecutamos nevamente el comando
+
+		_git status
+
+	_entocnes el sistema nos indicará, a través, de un mensaje de color rojo que hemos modificado el respectivo archivo
+
+
+	_de ésta manera, para agregar nuevamente éste archivo que hemos modificado debemos utilizar el comando:
+
+		_git add + fileNane + Extension + enter
+
+		_git add index.html + enter
+
+		git add -A
+
+
+	_para posteriormente volver ha hacer otro "commit", para que así, los cambiar de los archivos que hemos modificado sean cargado debemos utilizar el siguiente comando:
+
+		_git commit -m "se agregó un nuevo tópico en la navegación html (04-02-2017)"
+
+
+	_para que así, en éste caso nos arroje un mensaje como el siguiente:
+
+		_1 file changed, 1 insertion(+), 1 delection(-)
+
+
+	Reporte:
+	________
+
+	_más también, podremos generar un reporte de todos los commnits, existente de ésta manera, el sistema creará un nuevo archivo de tipo "txt", con la descripción de todos los commits, existentes y lo guardará en la estructura de nuestro proyecto
+
+	_para lo cuál, dispondremos del comando:
+
+		_git log > commits.txt + enter
+
+	_para que así, el sistema cree un nuevo archivo de tipo .txt, con el nombre de "commits", en la estructura principal de nuestro proyecto
+
+	_de ésta manera, podremos disponer de forma local de un listado de los commits, disponibles dentro del proyecto respectivo
+
+
+
+	Cambier Mensaje:
+	________________
+
+	_más posteriormente de haber creado un comit, tenemos la posibilidad de cambiar posteriormente el mensaje que le habíamos aplicado el commit, creado
+
+	_ya sea por que nos hayamos equivocado ó por que ahora tenemos otro matíz, de éste commit, y deseamos cambiarle la descripción ó mensaje
+
+	_para lo cuál, primeramente será navegar hasta la ruta del proyecto a través, de git bash, para posteriormente viajar hasta éste commit, respectivo para lo cuál, disponemos del siguiente comando:
+
+
+		_git checkout master + enter
+
+
+	_para que así, el commit, deseado esté seleccioando y estemos dentro de éste
+
+	_para posteriormente aplicar el siguiente comando a través, del cuál, podremos cambiar el mensaje del commit, actual ó seleccionado, éste comando es:
+
+		//estructura y ejemplo:
+
+			_git commit --amend -m "Proyecto Esculapio Medical Universe Version V2 Pro 30 de Mayo del 2017"
+
+
+	_de ésta manera, prácticamente el commit, será nuevamente creado con el nuevo mensaje ó descripción actualizada
+
+
+	NOTA: éstos cambios que hemos realizado sobre éste commit, debemos de subirlo ha la plataforma de github, más éste tipo de cambio es superficial ya que la estructura de archivos del proyecto local como el remoto son las mismas en éste comit, respectivo ya que sólo hemos cambiar el mensaje ó descripción del mismo
+
+	para lo cuál, debemos de subir éste commit, a github, a través, de un comando especial ó con una variante la cuál, forzará ha github, a subir el commit, respectivo con cambios mínimos
+
+	de ésta manera, dispondremos del siguiente comando:
+
+
+		_git push origin master -f + enter
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

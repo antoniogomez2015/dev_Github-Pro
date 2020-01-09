@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Git</title>
+
+</head>
+
+<body>
+
+	<!--
+
+	Guía y uso rápido de git:
+	_________________________
+
+	
+	//////////////////////////////////////////////////////////////////////////////////////////	
+
+	WorkFlow: (lógica inicial)
+	_________
+
+		_el funcionalismo base del sistema de versiones de git, está estructurado en tres estados con los cuáles, siempre vamos ha trabajar los cuáles son:
+
+			1_Working Directory
+
+				_aquí es donde editamos y trabajamos con nuestros proyectos
+
+			2_Staging Area:
+
+				_aquí es donde escogemos que archivos están listos para pasar al siguiente estado, al igual que decidimos que archivos aún no están listos por el momento para pasar al siguiente estado
+
+			3_Registro de Archivos:
+
+				_en éste paso es donde haremos el repositorio ó commit, de archivos los cuáles, ocnformarán nuestra versión estable del proyecto inicial y partir de ésta
+
+
+			4_Head:
+
+				_head, es el commit, donde nos encontramos en el momento donde estamos trabajando
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	1_Instalar Git: (instalación local)
+	_______________
+
+
+		_primeramente debemos de tener instalado Git para lo cuál, debemos verificar si ya lo tenemos instalado
+
+		_ir ha "01_Git_Instalacion.html", para más detalles
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	2_Configurar Git: (personalización)
+	_________________
+
+		_para posteriormente proceder ha configurar git, para lo cuál, debemos de ir ha "03_Git_Bash_Settings.html", para más información
+		
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	3_Git Bash: (terminal git)
+	___________
+
+		_posteriormente de haber instalado y configurado git, podremos ejcutar éste como una terminal  CMD, accediendo a través, de "inicio/git bash"
+
+		_ir ha "02_Git _Bash.html", para más detalles
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	4_GitHub Project Conection: (conectar ó dsconectar un proyecto ha git en local a github remoto)
+	___________________________
+
+		_de ésta manera, podremos cambiar de un proyecto ha otro, sea éste personal u organizacional lo cuál, nos permitirá trabajar en diferentes commits, para diferentes proyectos unos separados de otros
+
+		_para lo cuál, dispondremos de los siguientes comandos:
+
+
+			//verificar ha que proyecto estamos conectados de forma local
+
+				_git remote -v + enter
+
+			//desconectarse del proyecto local y personal de git:
+			
+				_git remote remove origin + enter
+
+			//conectarse al proyecto remoto:
+			
+				_git remote add origin https://github.com/antoniogomez2015/esculapio-V2-30-de-Mayo-del-2017.git + enter
+
+			//verificar ha que proyecto estamos conectados de forma local
+			_git remote -v + enter
+
+			//subir arhivos al proyecto remoto sincronizado (extra a la conexión al proyecto)
+
+				_git push origin master + enter
+
+
+		_de ésta manera, nos conectaremos con el repositorio correcto en github, desde nuestro repositorio ó proyecto local respectivo ó adecuado
+
+
+		_para más información ir ha "15_GitHub_Git_Remote.html"
+
+
+
+	5_Git Project: (crear ó reanudar proyecto exitente)
+	______________
+
+		_de ésta maenra, ya con git, instalado y configurado correctamente podremos ahora crear ó inicializar un nuevo proyecto ó continuar con uno existente previamente
+
+		_para lo cuál, debemos ir hasta la ubicación de nuestro proyecto, ej:
+
+
+			_c://xampp/htdocs/esculapioV2
+
+
+		_y allí, hacer "mouse right click", y seleccionar la opción de "Git Bash Here", para que así, git bash, se ejecute en esa ubicación específica de nuestro proyecto respectivo
+
+		_para a continuación ejecutar el siguiente comando de inicio ó arranque de nuestro proyecto en git bash:
+
+
+			_git init + enter
+
+
+		_para más información ir ha "04_Git_Project.html"
+
+
+		[borrar un proyecto existente: en la ubicación del proyecto con git bash, comando: 
+		"rm -rf .git + enter"]
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	6_Git Status: (estado de un proyecto existente)
+	_____________
+
+	_así, como también, podremos saber el estado de un proyecto existente previamete para que así, podamos saber el proceso y progreso realizado así, como también, anomalías y errores posibles, otros
+
+	_para lo cuál, en la ubicación del proyecto existente respectivo debemos de ejecutar el siguiente comando:
+
+
+		_git status + enter
+
+
+	_para que así, el sistema nos arroje una lista de las carpetas y archivos contemplados por el sistema en relación a nuestro proyecto vigilado por git
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	7_Git Add: (actualización de un proyecto existente)
+	__________
+
+	_de ésta maenra, cuando ya sabemos el estado de los archivos vigilados en un proyecto git, podremos ahora, descartar y agregar nuevos archivos el repositorio ó siguiente face del proceso de producción
+
+	_para lo cuál, primeramente debemos de ejecutar git bash, en la ubicación del proyecto respectivo y ejecutar el siguiente comando:
+
+
+		//agregar archivos independientes al repositorio
+
+			_git add index.html + enter
+
+
+		//agegar todos los archivos existentes que aún no han sido enviados al repositorio
+
+			_git add -A + enter
+
+	_para más información ir ha "06_Git_Add.html"
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	8_Git Commit: (fijar repositorio local | crear versiones del proyecto local)
+	_____________
+
+	_de ésta manera, cuando ya hemos decidido que archivos están listos para el siguiente proceso y los hemos agregado al repositorio es hora de guardar éstos cambios de forma permanente acompañado de un mensaje descriptivo para lo cuál, debemos de hacer uso del siguiente comando:
+
+
+		_git commit -m "mensaje"
+
+
+	_para que así, el sistema nos arroje un listado en color blanco de todos los archivos agregado
+
+	_de ésta menera, a partir de éste punto si ejecutamos el comando:
+
+		_git status
+
+	_éste nos arrojará el siguiente mensaje:
+
+		_On bran master
+		_nothing to commit, working tree clean
+
+
+	_para más información ir ha "07_Git_Commit.html"
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	9_Git Log: (historial de commits ó repositorios)
+	__________
+
+	_así, luego de haber crear varios "commits", podremos acceder ha todo éstos ha modo de lista para tener un dimensión de la cantidad de modificaciones en orden cronológico en la cuál, podremos ver quién ha realizado cambios y en que momento
+
+	_para lo cuál, dispondremos del comando:
+
+
+		_git log + enter
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	10_Git Checkout: (viajar en el tiempo)
+	________________
+
+	_de ésta manera, podremos acceder a una versión del proyecto previa para lo cuál, primeramente debemos de saber cuantos commits, hay disponibles en la línea de tiempo del proyecto
+
+	_para que así, de ésta manera, poder tomar nota del código del respectivo commit, al cuál, deseamos acceder ó viajar hasta ese punto en el tiempo específico del proyecto respectivo a través, del comando:
+
+
+		_git log + enter
+
+
+	_para luego acceder ó viajar a una determinada versión proyecto para lo cuál, disponemos del siguiente comando:
+
+
+		_git checkout bbbe6c382c418fe35fe69fa1f4f714336d67b48c + enter
+
+
+	_de ésta maenra, a partir de éste punto el proyecto que tendremos disponible será la versión que hemos cargado ó viajado en el tiempo
+
+
+	_más posteriormente podremos volver a la última versión del proyecto donde habíamos quedado para lo cuál, dispondremos del siguiente comando:
+
+
+		_git checkout master + enter
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	11_Git Branchs: (ramas | versiones experimentales del proyecto)
+	_______________
+
+	_de ésta manera, podremos crear diferentes versiones ó ramas de nuestro proyecto en las cuáles, podremos experimentar y hacer cambios de lógica y cambios radicales en una versión del poryecto a parte de la principal y estable
+
+	_para lo cuál, dispondremos de los siguientes comandos:
+
+
+		//ver ramas existentes:
+			_git branch + enter
+
+
+		//crear una nueva rama:
+			_git branch alter1 + enter
+
+
+		//intercambiar entre rama activa ó seleccionada
+			_git checkout alter1 + enter
+
+
+		//crear un nueva rama y movernos ha ésta:
+			_git checkout -b + branchName + enter
+
+
+	_para más información ir ha "11_Git_Branchs.html"
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	12_GitHub Login: (crear un repositorio remoto | iniciar sesión)
+	________________
+
+	_para lo cuál, primeramente debemos de ir a la página oficial de github, "https://github.com/" y allí, proceder ha crear una nueva cuenta
+
+
+		_https://github.com/
+
+			_username: antoniogomez2015
+
+			_mail: massivo.ca@gmail.com
+
+			_password: monoproduccion12015
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	13_GitHub Remote: (sincronizar proyecto local con proyecto remoto)
+	_________________
+
+	_donde primeramente debemos de crear un nuevo proyecto remoto
+
+	_y en dicha ubicación en la perte superior podremos ver una llave, key, ó enlace, ej:
+
+
+		//ruta del proyecto en nuestro perfil de la plataforma de Github:
+
+			antoniogomez2015/esculapio-V2-30-de-Mayo-del-2017
+
+
+				//key de acceso de sincronización del proyecto local con el proyecto remoto
+
+					_HTTPS SSH | https://github.com/antoniogomez2015/esculapio-V2-30-de-Mayo-del-2017.git
+
+
+	_para luego navegar hasta la ubicación del proyecto local a trvés, de git bash, y allí ejecutar el siguiente comando:
+
+
+		_git remote add origin https://github.com/antoniogomez2015/esculapio2017.git + enter
+
+
+	_para que así, ambos proyectos tanto el local como el remoto queden sincronizados y poder hacer un volcado del proyecto local hacia el proyecto remoto y sincronizaciones posteriores, otros
+
+
+		_para más información ir ha "15_GitHub_Git_Remote.html"
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+	14_GitHub Git Push: (migrar ó exportar el proyecto local ha el proyecto remoto)
+	___________________
+
+	_de ésta manera, al haber sincronizado ambos proyectos tanto el proyecto local con el proyecto remoto en el paso anterior
+
+	_podremos comenzar ha realizar la migración ó volcado de los archivos ubicados en nuestro sistema local al proyecto remoto
+
+	_para lo cuál, disponemos del siguiente comando:
+
+
+		_git push origin master + enter
+
+
+	_de ésta manera, los archivos de nuestro sistema local comenzarán ha exportarse ó subirse ha nuestro proyecto remoto hasta conformar el repositorio ó respaldo remoto de nuestro proyecto previamente sincronizado
+
+
+	_para más información ir ha "16_GitHub_Git_Push_Origin_Master.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-->
+	
+</body>
+</html>

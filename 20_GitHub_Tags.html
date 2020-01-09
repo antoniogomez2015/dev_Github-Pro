@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<!--
+
+
+	Git Código Facilito
+
+
+		https://www.youtube.com/watch?v=zH3I1DZNovk&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+		Tutorial:
+
+			6.- Curso Git - Git tags
+
+				https://www.youtube.com/watch?v=wrHWa8OMYOg&index=6&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	Git y GitHub Tags:
+	__________________
+
+	_los tags, son punto específicos en el historial de nuestro proyecto, y se usan para marcar alguna versión del mismo
+
+	_de ésta manera, podremos indicar a un commit, que éste es la versión 1.0, por ejemplo de nuestro proyecto y que éste otro commit, es la versión 2.0, y así, secesivamente, otros
+
+
+
+	Tipos de Tags:
+	______________
+
+
+		Tags Anotadas:
+		______________
+
+		_las tags anotadas son almacenadas como objetos dentro de la base de git, en nuestro sistema local y éstas contienen más información que el tipo de tags ligeras
+
+
+			//estructura:
+				_git tag -a v1.0 -m "mensaje" + enter
+
+
+
+		Tags Ligeras:
+		_____________
+
+		_las tags, ligeras son otra forma de crear tags, más simples y con poca información
+
+
+			//estructura:
+				_git tag -a v1.0 + enter
+
+
+
+
+	Select Commit:
+	______________
+
+	_primeramente debemos de seleccionar y entrar en el commit, al cuál, deseamos aplicar un tag, para lo cuál, dispondremos del siguiente comando
+
+
+		//primeramente debemos listar los commits, existentes
+			_git log + enter
+
+
+		//viajar en el tiempo hasta el respectivo commit, deseado para agregar un nuevo tag
+			_git checkout bbbe6c382c418fe35fe69fa1f4f714336d67b48c + enter
+
+
+	
+
+	Creat Tag:
+	__________
+
+	_de ésta manera, en la ubicación del proyecto a través, de git bash, y con el commit, respectivo seleccionado
+
+	_debemos aplicar el siguiente comando:
+
+
+		_git tag -a v1.0 -m "Proyecto Esculapio Medical Universe Versión 2.0 | 30 de Mayo del 2017" + enter
+
+
+	_de ésta manera, éste tag, que hemos creado quedará almacenado dentro de la estructura de archivos de nuestro proyecto y repositorio local ´más aún, ésto no ha sido migrado ó replicado en el proyecto remoto en github
+
+
+
+	Asignar Tags a Diferentes Commits:
+	__________________________________
+
+	_también, tendremos la posibilidad de asignar un tag, a uno ó varios commits, existentes para lo cuál, debemos de
+
+	_para lo cuál, la única diferencia con el paso anterior es que en éste caso agregaremos al final del comando ó instrucción el código chart, del respectivo commit, al cuál, deseamos agregar ésta tag, ej:
+
+
+		_git tag -a v1.0 -m "Proyecto Esculapio Medical Universe Versión 2.0 | 30 de Mayo del 2017" bbbe6c382c418fe35fe69fa1f4f714336d67b48c + enter
+
+
+	_de ésta manera, el respectivo tag, será asignado al commit, indicado y no al actual ó seleccionado
+
+
+
+	Compartir ó Subir Tag ha GitHub:
+	________________________________
+
+	_ahora debemos de subir ó migrar el tag, ó los tags, que hemos creado de nuestro proyecto local ha nuestro proyecto remoto en la plataforma de github 
+
+	_para lo cuál, en la ubicación del proyecto desde git bash, debemos de aplicar el siguiente comando:
+
+
+		_git push origin v1.0 + enter
+
+
+	_de ésta manera, como podemos ver estamos utilizando parte del comando que utilizamos para migrar un proyecto local ha un proyecto remodo
+
+	_más ha éste comando le estamos agregando al final la versión del tag, que creamod previamente
+
+	_de ésta manera, podremos ir a la plataforma de github, e ir al respectivo proyecto/branch/.., y allí entrar la pestaña de "Code", "releases"
+
+	_para que así, podamos acceder a la opción de "Tags", de éta manera, podremos ver el tag, que hemos subido ó migrado desde nuestro proyecto local ha nuestro proyecto remoto
+
+
+
+	Subir Múltiples Tags a GitHhub:
+	_______________________________
+
+	_y para en los casos en los que tengamos más un tag, creado dispondremos de un comando a través, del cuál, podremos subir todos los tags, existentes en el proyecto de forma local
+
+	_de ésta manera, el sistema sincronizará todos los tags, que aún no estén en el proyecto remoto de forma práctica a través, de un sólo comando el cuál, es:
+
+
+		_git push origin --tags + enter
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+-->
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
